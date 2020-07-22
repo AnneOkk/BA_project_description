@@ -1,0 +1,226 @@
+\documentclass[man, 12pt, a4paper, noextraspace]{apa6}
+
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,sortcites=true,backend=biber]{biblatex}
+\usepackage{smartdiagram}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{textcomp}
+\usepackage{setspace}
+\usepackage{pdflscape} %landscape pages
+\usepackage{rotating}
+\usetikzlibrary{positioning,shapes.multipart,calc,arrows.meta}
+
+\usepackage{ragged2e}
+\usepackage{array}
+
+\usepackage{multirow,booktabs,setspace,caption}
+\usepackage{tikz}
+\newcolumntype{R}[1]{>{\RaggedRight}p{#1}}
+
+
+
+% Removes month from bibliography entries
+\AtEveryBibitem{
+  \clearfield{month}
+}
+\DeclareLanguageMapping{american}{american-apa}
+
+% Removes "retrieved from on date" from bibliography entry unless it is a wiki URL
+\DeclareSourcemap{
+\maps[datatype=bibtex]{
+\map{
+\step[fieldsource=url,
+notmatch=\regexp{wiki},
+final=1]
+\step[fieldset=urldate, null]
+}
+}
+}
+
+\DeclareFieldFormat{url}{\bibstring{urlfrom}{#1}}
+\DeclareFieldFormat{journal}{\lowercase{#1}}
+
+\DefineBibliographyStrings{english}{%
+  urlfrom = {Retrieved from: },
+}
+
+\addbibresource{library.bib}
+
+
+% Can help catch outdated code practices by giving you console warnings. Commented out by default so as to not confuse new users.
+%\usepackage[l2tabu]{nag}
+
+% title, etc.
+\title{Entrepreneurs' Proactive Behavior in Response to Critical Work Events: The Role of Appraisal}
+\shorttitle{Entrepreneurs' Reactions to Critical Work Events}
+\author{Anne-Kathrin Kleine, Antje Schmitt, \& Barbara Wisse}
+\affiliation{University of Groningen}
+
+%\abstract{}
+%\keywords{}
+%\authornote{}
+
+\begin{document}
+\maketitle
+
+\section{Theoretical Background}
+
+While there exist multiple views on what defines entrepreneurship, most agree that it involves activities that aim at "the innovative combination of resources in order to introduce new goods or services, ways of organising, markets, processes or raw materials" (\citeauthor{Abreu2013}, \citeyear{Abreu2013}, p. 409).
+While founding and leading their business entrepreneurs need to effectively deal with a series of positive and negative work events, such as the successful release of a new product line or the departure of an important stakeholder \parencite{Lechat2016, Schindehutte2006}.
+\textcite{Lechat2016} classified entrepreneurial work events as stressors versus satisfactors that affect entrepreneurs' mental and physical health.
+Entrepreneurs are responsible for smooth operation and the firm's success. 
+That means, in most cases, rather than merely perceiving work events and experiencing their consequences, entrepreneurs have to behaviorally respond to those events.
+For example, discovering a severe financing gap will unlikely pass without any reactions on parts of the business owner. 
+However, according to event system theory \parencite[EST;][]{Morgeson2015}, while individuals encounter events on a day-to-day basis, yet not all events may become salient. 
+Routine events may be ignored by the entrepreneur, whereas more significant events prompt behavioral responses.  
+EST proposes three event characteristics that trigger behavioral response, namely event novelty, disruption, and criticality. 
+Whenever an event demands a reaction (based on its novely, disruption, and criticality), the direct link between events and entrepreneurs' satisfaction disguises the fact that the behavioral responses to these events may play an important role for entrepreneurs' well-being. 
+The goal of the current study is to investigate the role of behavioral responses to significant work events for entrepreneurs' problem-solving and well-being. \par 
+
+\subsection{The effect of personal initiative on problem-solving success}
+
+According to conservation of resources theory \parencite[COR,][]{Hobfoll.1989}, in situations that pose a threat to or indicate a loss of resources, individuals may invest resources to protect themselves against (further) resource loss or to recover from previous losses \parencite{Hobfoll.2001}. 
+A behavioral response that builds on resource investment in the face of threatened resources is personal initiative.
+Personal initiative reflects an active, future-oriented reaction to barriers \parencite{Frese1996, Fay2001}.
+Studies on the effectiveness of training interventions that aimed at enhancing entrepreneurs' personal initiative have revealed a beneficial effect of personal initiative on microbusiness success \parencite{Frese2000} and diminished levels of strain \parencite{Searle2008}.
+Several studies indicate positive effects of entrepreneurs' personal initiative on business performance \parencite[e.g.,][]{Sambasivan2010, Krauss2005}. 
+Drawing from previous research, we argue that personal initiative helps entrepreneurs in the immediate management of stressful work events \parencite[e.g.,][]{Frese2000a}.
+Being active rather than passive in response to negative work events should increase the likelihood of solving the problem entrepreneurs were confronted with. 
+That is, the more entrepreneurs engage in immediate action in the face of negative work events, the more likely the problem they were confronted with is resolved at a later time point.
+Hence: \par 
+
+\textit{Hypothesis 1}: Personal initiative at T1 is positively related to problem-solving at T2. \par 
+
+\subsection{The effect of personal initiative on job satisfaction and job strain}
+
+Next to investigating the link between personal initiative and indicators of success, we seek to shed light on the effects of personal initiative for entrepreneurs' job attitudes and work-related well-being, in terms of job satisfaction and job strain. 
+Job satisfaction is an important outcome of work-related efforts that is still underrepresented in entrepreneurship research \parencite[see][]{Stephan2018}. 
+Entrepreneurs who are satisfied with their job are committed to their work task and perform on higher levels \parencite[e.g.,][]{Judge2001}. 
+Moreover, job satisfaction has been shown to positively affect satisfaction in other life domains, such as nonworking activities and family \parencite[e.g.,][]{Heller2002}. 
+In contrast, job strain has been related to higher odds for mental health issues, such as depression and anxiety, as well as physical health problems \parencite[e.g.,][]{Strazdins2004}.  
+Even if entrepreneurs succeed in solving their problems through proactive approaches, if personal initiative takes an undue toll on them, then it might not be sustainable over the longer term. \par 
+
+Proactive behavior has been shown not to be beneficial for well-being under all circumstances \parencite[e.g.,][]{Bolino.2010, Strauss2017, Parker2019}. 
+This concern derives from the observation that proactivity may consume mental energy \parencite{Bolino.2010} and deplete individual resources \parencite{Grant.2011}.
+It is unduly optimistic to expect an unconditionally positive effect of effortful behavior, such as personal initiative, on well-being outcomes.
+Accordingly, in the current study we seek to investigate the boundary conditions that determine the effect of personal initiative, as a proactive response to negative work events, on entrepreneurs' strain and job satisfaction.  \par
+
+\subsubsection{The role of threat appraisal}
+According to transactional stress theory \parencite[TST, e.g.,][]{Lazarus.1966}, threat appraisal occurs in situations when harm has not happened, but is anticipated. 
+While previous research has focused on the role of cognitive appraisal for the coping process \parencite[e.g.,][]{Parkes1984, Folkman.1986}, we propose that threat appraisal interacts with personal initiative in predicting entrepreneurs' strain. \par 
+\textcite{Hobfoll2004, Hobfoll.2001} describe a number of corollaries that help understanding the complex effects of resource investment on individual well-being. 
+According to their first corollary, individuals with fewer resources or those who perceive a threat to resources are more likely to experience resource losses.  
+Appraising situations as threatening consumes mental energy and draws the attention to the expectation of negative outcomes \parencite[e.g.,]{Lazarus.1995}. 
+The combination of high initiative and high threat appraisal exposes entrepreneurs to a double burden: They invest resources while at the same time expecting resource loss. 
+This investment of and threat to resources likely feels overtaxing, thus negatively affecting job satisfaction and increasing levels of strain.
+Accordingly, we propose: \par 
+
+\textit{Hypothesis 2}: Threat appraisal interacts with personal initiative in predicting entrepreneurial job satisfaction and strain. Specifically, the more entrepreneurs experience a situation as threatening, (a) the stronger negative is the effect of T1 personal initiative on T2 job satisfaction and (b) the stronger positive is the effect of T1 personal initiative on T2 job strain. \par 
+
+\subsubsection{The role of entrepreneurial motivation}
+
+Entrepreneurs may be divided into two groups depending on the main motive for founding their business: Those who started their business because they came across an opportunity versus those who started the business out of necessity (e.g., to avoid unemployment). 
+Drawing from self-determination theory \parencite[SDT,][]{Ryan.2001}\textcite{Ryff2019} propose that the lack of choice inherent in necessity entrepreneurship may lead to resource constraints, consequently explaining lower levels of satisfaction derived from entrepreneurial activities. 
+According to SDT, when people engage in a certain behavior because they find it interesting, they are autonomously motivated. 
+In contrast, they experience controlled motivation if they act under pressure with the goal of avoiding negative outcomes or gaining rewards \parencite{Ryan.2001}. 
+The autonomous motivation inherent in opportunity entrepreneurship may act as a personal resource that makes it possible to derive satisfaction and meaningfulness from performing work tasks. 
+This motivational resource is missing among necessity entrepreneurs \parencite[e.g.,][]{Block2009}.
+Engaging in proactive behaviors, such as personal initiative, likely spurs job satisfaction and diminishes strain when entrepreneurs' actions are driven by autonomous motivation. 
+On the contrary, when being largely driven by external forces, the effortful engagement in personal initiative likely feels energy-draining, consequently diminishing job satisfaction and enhancing the likelihood of experiencing strain. 
+Indeed, \textcite{Strauss2017} found proactive work behavior to be positively associated with job strain when controlled motivation was high and when autonomous motivation was low. 
+Accordingly, we propose that the motivation to start a business interacts with personal initiative in predicting entrepreneurial job satisfaction and job strain. Specifically: \par 
+
+\textit{Hypothesis 3.1}: Among entrepreneurs who started their business because they came across an opportunity, T1 personal initiative leads to (a) an increase in T2 job satisfaction and (b) a decrease in T2 job strain. 
+
+\textit{Hypothesis 3.1}: Among entrepreneurs who started their business out of necessity, T1 personal initiative leads to (a) a decrease in T2 job satisfaction and (b) an increase in T2 job strain. \par
+
+\subsubsection{Problem-solving as a mediator}
+Solving a pressing work problem has positive consequences for individuals' affect and job satisfaction \parencite[e.g.,][]{Ayres2007}. 
+That is, in addition to direct influences of personal initiative on entrepreneurs' well-being, we propose that entrepreneurs derive satisfaction and benefit in terms of diminished strain from a successful resolution of the problem they had to face. 
+However, we suggest that the effect of personal initiative on well-being outcomes is only partly mediated by successful problem-solving.
+From a pragmatic viewpoint, the resolution of pressing problems should relieve the entrepreneur and thus benefit his or her well-being. 
+However, we suggest the resource-enhancing and resource-depleting effects of personal initiative on well-being operate via different emotional-cognitive pathways.
+That is, the entrepreneur may experience the positive resolution of the problem as rewarding, while at the same time experiencing the effortful engagement in proactive behavior as resource-depleting (e.g., in case of high threat appraisal). 
+Hence: 
+
+\textit{Hypothesis 4}: Successful problem-solving at T2 partly mediates the relationship between T1 personal initiative and (a) T3 job satisfaction, as well as (b) T3 job strain. 
+
+\section{The Current Study}
+
+\subsection{Selection Criteria} 
+
+We seek to investigate the research model explained above among people who work self-employed and were involved in founding the business they currently work for. 
+As we intend to investigate the effects among early-stage entrepreneurs, we include those who indicate that they have founded their business within the past 3.5 years \parencite{Bosma.2019}.
+The questionnaire will be available in English. \par 
+
+\subsection{Assessment scheme}
+
+In our assessment scheme, we follow an event-contingent delivery schedule. 
+That means, at the end of the work day, participants will receive an invitation to a brief questionnaire in which they will be asked about the occurrence of negative work events over the course of the past two working days. 
+We chose a reflection time of two days to maximize the possibility that an event has happened while still making sure that the event is cognitively available and relevant.
+Those who indicate that they have experienced a negative work event receive the T1 questionnaire right after the assessment of negative work events. 
+The T2 and T3 questionnaires will be sent via email one week and two weeks after the T1 assessment, respectively. 
+We chose a time lag of one week between the waves as the consequences of behavioral efforts likely need a few days to unfold their effects on problem-solving, job satisfaction, and job strain. 
+At the same time, we wanted to make sure that the well-being consequences are still attributable to the behavioral efforts entrepreneurs engaged in. 
+Those who indicate in the initial questionnaire that they have not experienced a negative work event will receive the same questionnaire asking about the occurrence of negative work events two days later (demographic information will only be assessed once).
+In total, participants will be invited three times to indicate whether they have experienced negative work events. 
+If no negative work events have occurred over the course of those five days, they will not be invited to the T1-T3 surveys. \par 
+
+\subsection{Measures}
+
+\subsubsection{Negative work events}
+The occurrence of negative work events will be assessed using categories formed based on literature reviews indicating common entrepreneurial work events \parencite{Lechat2017, Pontikes2017, Cope.2003}. 
+Specifically, entrepreneurs will be asked whether over the past two days they experienced an event that is related to one of the following categories and that has not been solved yet: Financial difficulties; conflicts with clients, stakeholders, employees, or co-owners; conflicts between clients, stakeholders, employees, or co-owners; legal issues; absence or a lack of personnel or support; problems related to material supply or quality; mistakes or mishaps; or another work event not related to these categories. 
+Subsequently, they should describe the event(s) briefly.
+Based on EST, for each problem they indicated, entrepreneurs will be asked to indicate whether they had to deal with the same problem before (novelty); whether the event demands them to do something (disruption); and whether the event matters regarding their own or their business' performance (criticality).
+Only if all three questions were answered with yes, they will receive an invitation to the T1 questionnaire. 
+In case entrepreneurs indicate multiple negative work events, they will be asked to indicate which of these events they experienced as most disruptive. 
+The T1-T3 questionnaires will relate to the event indicated. 
+
+\subsubsection{Personal initiative}
+We adapted three items from the personal initiative scale developed by \textcite{Frese1997} to measure entrepreneurs personal initiative in response to negative work events. 
+The items are "I actively attacked the problem"; "I searched for a solution to the problem immediately"; "I took initiative immediately, no matter whether others did". 
+Answers will be assessed on a five-point scale ranging from "Not true at all" to "Very true".
+Personal initiative will be measured at T1-T3. 
+
+\subsubsection{Threat appraisal}
+Threat appraisal of the most disruptive work event that happened over the course of the past week will be assessed with three items adapted from \textcite{LePine.2016}. 
+The items are "The event threatens my personal growth and well-being"; "I feel that the event makes it harder to achieve my personal goals"; "In general, I feel that the event threatens my personal accomplishment". 
+Entrepreneurs will be asked to what extent they agree with these statements on a seven-point scale from "Strongly disagree" to "Strongly agree". 
+Threat appraisal will be assessed at T1. 
+
+\subsubsection{Opportunity versus necessity entrepreneurship}
+Entrepreneurs will be asked about the main motivation for founding their business with one item.
+Answer options are "I founded my business out of necessity (for example, to avoid unemployment or because I needed to quit my job)" versus "I founded my business because I came across an opportunity (for example, it started with a business idea I wanted to follow)". 
+Entrepreneurial motivation will be assessed at T1. 
+
+\subsubsection{Problem-solving}
+Meta-analytic findings indicate that subjective measures of performance can accurately reflect objective measures, thus ensuring their reliability and validity \parencite{Rauch2009}.
+Following the measurement of subjective performance proposed by \textcite{Lumpkin2001}, we assess firm performance in three areas using four items. 
+Specifically, participants will be asked to evaluate their current business performance relative to their competitors regarding sales growth, return on sales, net profit, and gross profit. 
+Net profit and gross profit will be averaged to reflect a measure of profitability. 
+Answers will be given on a seven-point scale ranging from "Low Performer" to "high Performer".
+In addition, as a more proximal measurement of success, we will ask whether the initially indicated problem has been successfully resolved. 
+
+\subsubsection{Strain}
+Job strain will be assessed with six items by \textcite{Warr1990}. 
+Participants will be asked to rate to what extent they had felt gloomy, miserable, depressed, tense, worried, or anxious at work during the last week on a five-point scale, ranging from “never” to “all the time”. 
+This is a common way of studying strain in response to negative work events \parencite[e.g.,][]{Jackson1985}. 
+
+\subsection{Control variables}
+Entrepreneurs' business performance may have an effect on their level of well-being \parencite[e.g.,][]{Dijkhuizen2018}. 
+We expect that the interplay between personal initiative, threat appraisal, and entrepreneurial motivation will be associated with job strain even after controlling for the successful resolution of the initially indicated negative work event. \par 
+
+In the entrepreneurship literature, work-family conflict has repeatedly been shown to diminish entrepreneurs' level of perceived strain and to benefit their well-being \parencite[see][]{Stephan2018}. 
+We expect that the relationships outlined above hold when controlling for the effects of work-family conflict. 
+Work-to-family conflict will be assessed with three items adapted from a scale developed by \textcite{Hill2005}.
+Specifically, respondents will be asked: "In the past three months, how often have you not had enough time for your family or other important people in your life because of their job"; "In the past three months, how often has work kept you from doing as good a job at home as you could?"; "“In the past 3 months, how often have you not been in as good a mood as you like to be at home because of your job?". 
+On a five-point scale, responses range from "very often" to "never". 
+
+\printbibliography
+\end{document}
+
